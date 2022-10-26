@@ -10,28 +10,29 @@ const connect = function() {
   conn.on("connect", (data) => {
     // code that does something when the connection is first established
     console.log('Connected to game server');
-    conn.write("Name: WEW")
+    conn.write("Name: WEW");
     //setInterval (() => conn.write("Move: up"), 50)
-   
-    
-    conn.on('data', (msg) => {
-
-      console.log(msg);
 
 
-    });
 
-    conn.setEncoding("utf8");
-
-    return conn;
 
   });
+  conn.on('data', (msg) => {
+
+    console.log(msg);
+
+
+  });
+
+  conn.setEncoding("utf8");
+
+  return conn;
 };
 console.log("Connecting ...");
 
 
 module.exports = {
-connect,
+  connect,
 }
 
 
