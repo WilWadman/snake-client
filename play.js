@@ -1,6 +1,6 @@
 const net = require("net");
-const {connect} = require('./client.js');
-const {setupInput} = require("./input.js");
+const { connect } = require('./client.js');
+const { setupInput } = require("./input.js");
 
 setupInput(connect());
 
@@ -14,7 +14,7 @@ client.setEncoding('utf8');
 // event listener
 
 // is a function that waits for something to happenen
-// and when it happens.... it runs a callback 
+// and when it happens.... it runs a callback
 
 stdin.on('data', (data) => {
   client.write(`${name}: ${data}`);
